@@ -1,4 +1,4 @@
-# practica-ci-actions
+# Practica-CI
 
 Practica de Integracion Continua con GitHub Actions.
 

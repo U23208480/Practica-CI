@@ -1,5 +1,5 @@
 {
-  "name": "practica-ci-actions",
+  "name": "Practica-CI",
   "version": "1.0.0",
   "description": "Practica de Integracion Continua con GitHub Actions",
   "main": "src/calculadora.js",
