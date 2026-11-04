@@ -5,7 +5,7 @@
   "main": "src/calculadora.js",
   "scripts": {
     "build": "node --check src/calculadora.js",
-    "test": "node --test test/"
+    "test": "node --test \"test/**/*.test.js\""
   },
   "license": "ISC"
 }
