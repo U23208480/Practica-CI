@@ -6,10 +6,11 @@ on:
     branches: [main]
 
 jobs:
-  validar:
+  pruebas:
+    name: Ejecutar pruebas
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar el codigo del repositorio
+      - name: Clonar repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
@@ -22,3 +23,20 @@ jobs:
 
       - name: Ejecutar pruebas
         run: npm test
+
+  artefacto:
+    name: Generar y publicar artefacto
+    needs: pruebas
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Crear paquete ZIP
+        run: zip -r paquete.zip src package.json README.md
+
+      - name: Publicar artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: paquete
+          path: paquete.zip
